@@ -1,0 +1,125 @@
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  border-radius: 16px;
+  height: 80px;
+  margin-bottom: 24px;
+}
+
+.searchContainer {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+}
+
+.searchInput {
+  width: 100%;
+  background: hsla(210, 40%, 98%, 0.05);
+  border: 1px solid var(--border-medium);
+  border-radius: 24px;
+  padding: 12px 16px 12px 48px;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 15px;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.searchInput:focus {
+  background: hsla(210, 40%, 98%, 0.08);
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 4px hsla(250, 95%, 65%, 0.1);
+}
+
+.searchInput::placeholder {
+  color: var(--text-muted);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.iconBtn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  position: relative;
+  padding: 10px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconBtn:hover {
+  background: hsla(210, 40%, 98%, 0.05);
+  color: var(--text-primary);
+}
+
+.badge {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent-primary);
+  border-radius: 50%;
+  border: 2px solid var(--bg-surface-elevated);
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  padding: 6px 16px 6px 6px;
+  border-radius: 30px;
+  transition: background 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.profile:hover {
+  background: hsla(210, 40%, 98%, 0.05);
+  border-color: var(--border-medium);
+}
+
+.avatar {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.profileDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.role {
+  font-size: 12px;
+  color: var(--text-secondary);
+}

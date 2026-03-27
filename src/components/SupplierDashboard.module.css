@@ -1,0 +1,192 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.pageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  font-size: 15px;
+}
+
+.primaryBtn {
+  background: linear-gradient(135deg, var(--accent-primary), hsl(250, 80%, 55%));
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 12px hsla(250, 95%, 65%, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.primaryBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px hsla(250, 95%, 65%, 0.4);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.statCard {
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.statIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: hsla(250, 95%, 65%, 0.1);
+  color: var(--accent-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.statLabel {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.statValue {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.tableCard {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardHeader {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.cardTitle {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.table th {
+  padding: 16px 24px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.tr {
+  transition: all 0.2s;
+}
+
+.tr:hover {
+  background: hsla(210, 40%, 98%, 0.03);
+}
+
+.table td {
+  padding: 16px 24px;
+  font-size: 14px;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text-secondary);
+}
+
+.supplierName {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.ratingCell {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.ratingStar {
+  color: var(--accent-warning);
+}
+
+.reliabilityBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.highReal {
+  background: hsla(142, 70%, 50%, 0.15);
+  color: var(--accent-success);
+}
+.medReal {
+  background: hsla(38, 92%, 50%, 0.15);
+  color: var(--accent-warning);
+}
+.lowReal {
+  background: hsla(348, 83%, 47%, 0.15);
+  color: var(--accent-danger);
+}
+
+.actionBtn {
+  background: hsla(210, 40%, 98%, 0.05);
+  border: 1px solid var(--border-light);
+  color: var(--text-secondary);
+  border-radius: 6px;
+  padding: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.actionBtn:hover {
+  background: hsla(210, 40%, 98%, 0.1);
+  color: var(--text-primary);
+}

@@ -1,0 +1,362 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.pageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  font-size: 15px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+/* If there is a side panel visible, we'll split the layout 2fr 1fr */
+.grid:has(.sidePanel) {
+  grid-template-columns: 2fr 1fr;
+}
+
+.tableCard {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardHeader {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.cardTitle {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.table th {
+  padding: 16px 24px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.tr {
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tr:hover {
+  background: hsla(210, 40%, 98%, 0.03);
+}
+
+.table td {
+  padding: 16px 24px;
+  font-size: 14px;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text-secondary);
+}
+
+.productName {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.tdStock {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.statusCritical {
+  background: hsla(348, 83%, 47%, 0.15);
+  color: var(--accent-danger);
+}
+
+.statusLow {
+  background: hsla(38, 92%, 50%, 0.15);
+  color: var(--accent-warning);
+}
+
+.statusOptimal {
+  background: hsla(142, 70%, 50%, 0.15);
+  color: var(--accent-success);
+}
+
+.statusOver {
+  background: hsla(190, 90%, 55%, 0.15);
+  color: var(--accent-secondary);
+}
+
+.forecastCell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.trendUp {
+  color: var(--accent-warning);
+}
+
+.trendDown {
+  color: var(--accent-secondary);
+}
+
+.aiSuggestionBadge {
+  background: hsla(250, 95%, 65%, 0.15);
+  color: var(--accent-primary);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid hsla(250, 95%, 65%, 0.3);
+}
+
+/* Side Panel */
+.sidePanel {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  animation: slideLeft 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.panelTitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.productInfoSummary {
+  margin-bottom: 24px;
+}
+
+.productInfoSummary h4 {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.productInfoSummary p {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.aiRecommendationCard {
+  background: hsla(38, 92%, 50%, 0.1);
+  border: 1px solid hsla(38, 92%, 50%, 0.3);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+.aiRecommendationCardSafe {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: hsla(142, 70%, 50%, 0.1);
+  border: 1px solid hsla(142, 70%, 50%, 0.3);
+  border-radius: 12px;
+  padding: 16px;
+  color: var(--accent-success);
+}
+
+.aiHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent-warning);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.recomText {
+  font-size: 14px;
+  color: var(--text-primary);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.primaryBtn {
+  width: 100%;
+  background: linear-gradient(135deg, var(--accent-primary), hsl(250, 80%, 55%));
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 12px hsla(250, 95%, 65%, 0.3);
+}
+
+.primaryBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px hsla(250, 95%, 65%, 0.4);
+}
+
+.secondaryBtn {
+  background: hsla(210, 40%, 98%, 0.1);
+  color: var(--text-primary);
+  border: 1px solid var(--border-medium);
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.secondaryBtn:hover {
+  background: hsla(210, 40%, 98%, 0.2);
+}
+
+.outlineBtn {
+  width: 100%;
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-medium);
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 16px;
+}
+
+.outlineBtn:hover {
+  background: hsla(210, 40%, 98%, 0.05);
+}
+
+.poPhase {
+  animation: fadeIn 0.4s;
+}
+
+.successHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--accent-success);
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 24px;
+}
+
+.sectionHeading {
+  font-size: 14px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.supplierList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.supplierCard {
+  background: hsla(210, 40%, 98%, 0.03);
+  border: 1px solid var(--border-light);
+  padding: 16px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.supTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.supName {
+  font-weight: 500;
+}
+
+.supRating {
+  color: var(--accent-warning);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.supStats {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.successState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex: 1;
+  animation: fadeIn 0.4s;
+}
+
+.successIconLg {
+  color: var(--accent-success);
+  margin-bottom: 16px;
+}
+
+.successState h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.successState p {
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.5;
+}

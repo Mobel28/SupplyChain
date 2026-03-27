@@ -1,0 +1,109 @@
+.sidebar {
+  width: 280px;
+  height: calc(100vh - 32px);
+  margin: 16px;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  position: sticky;
+  top: 16px;
+  z-index: 50;
+  /* Override default glass-panel radius to be slightly more prominent for standard layout */
+  border-radius: 20px;
+}
+
+.collapsed {
+  width: 80px;
+}
+
+.header {
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-light);
+  min-height: 80px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+.toggleBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.toggleBtn:hover {
+  background: hsla(210, 40%, 98%, 0.05);
+  color: var(--text-primary);
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 16px;
+  gap: 12px;
+  flex: 1;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  color: var(--text-secondary);
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  gap: 16px;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.navItem:hover {
+  background: hsla(210, 40%, 98%, 0.05);
+  color: var(--text-primary);
+  transform: translateX(4px);
+}
+
+.navItem.active {
+  background: var(--accent-primary);
+  color: #fff;
+  box-shadow: 0 4px 12px -2px hsla(250, 95%, 65%, 0.4);
+}
+
+.navItem.active:hover {
+  transform: translateY(-2px);
+}
+
+.icon {
+  flex-shrink: 0;
+}
+
+.collapsed .label {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+  transition: opacity 0.2s;
+}
+
+.label {
+  opacity: 1;
+  transition: opacity 0.3s 0.1s;
+}
